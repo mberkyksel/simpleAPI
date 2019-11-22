@@ -6,6 +6,10 @@ const app = express()
 var repoList = []
 var BookmarkedList = []
 
+let apiRoutes = require("./api-routes")
+// Use Api routes in the App
+app.use('/api', apiRoutes)
+
 
 app.use('/search/:keyword', function (req, res, next) {
   console.log('Request URL:', req.originalUrl)
